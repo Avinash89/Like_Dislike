@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipChildren="false">
+
+        <RelativeLayout
+            android:id="@+id/button_container"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="8dp"
+            android:clipChildren="false"
+            android:orientation="horizontal">
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/skip_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:src="@drawable/skip_red_24dp"
+                app:backgroundTint="@android:color/white"
+                app:fabSize="auto"
+                android:layout_marginLeft="80dp"
+                app:rippleColor="#22ED7563" />
+
+            <TextView
+                android:id="@+id/txt_decline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="60dp"
+                android:text="@string/decline"
+                android:visibility="gone"
+                android:textStyle="bold"
+                android:textColor="@color/colorRed"
+                android:textSize="@dimen/text_size"
+                android:background="@color/white" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/like_button"
+                android:layout_marginRight="80dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/like_green_24dp"
+                app:backgroundTint="@android:color/white"
+                app:fabSize="auto"
+                app:rippleColor="#226FE2B3" />
+
+            <TextView
+                android:id="@+id/txt_accept"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:text="@string/accept"
+                android:background="@color/white"
+                android:visibility="gone"
+                android:textStyle="bold"
+                android:textColor="@color/colorAccent"
+                android:layout_marginRight="60dp"
+                android:textSize="@dimen/text_size" />
+
+        </RelativeLayout>
+
+        <com.example.samplecard.util.CardStackView
+            android:id="@+id/card_stack_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/button_container"
+            android:clipToPadding="false"
+            android:padding="4dp"></com.example.samplecard.util.CardStackView>
+
+    </RelativeLayout>
+
+</LinearLayout>
